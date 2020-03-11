@@ -1,14 +1,12 @@
 <launch>
 
-  <group ns="turtles">
+  	<param name = "forward" value = "w"/>
+    <param name = "back" value = "s"/>
+    <param name = "left" value = "a"/>
+    <param name = "right" value = "d"/>
 
-    <node pkg="turtlesim" name="sim" type="turtlesim_node">
-    <param name = "forward" value = "g"/>
-    <param name = "back" value = "d"/>
-    <param name = "left" value = "l"/>
-    <param name = "right" value = "p"/>
-    </node>
+    <node pkg="turtlesim" name="turtle1" type="turtlesim_node"/>
 
-  </group>
+    <node pkg="turtle" name="talker" type="talker.py" output="screen"/>
 
 </launch>
