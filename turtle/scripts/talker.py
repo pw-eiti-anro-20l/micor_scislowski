@@ -5,7 +5,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 import sys, select, termios, tty
 
-def getKey():     #funkcja zwracajaca wcisniety klawisz, niestety nie udalo nam sie utworzyc prostszej
+def getKey():      #funkcja zwracajaca wcisniety klawisz, niestety nie udalo nam sie utworzyc prostszej
     tty.setraw(sys.stdin.fileno())
     select.select([sys.stdin], [], [], 0)
     key = sys.stdin.read(1)
