@@ -1,0 +1,12 @@
+<launch>
+
+    <param name = "robot_description" command = "xacro --inorder '$(find interpolacja)/urdf/movable.urdf'"/>
+    <param name = "use_gui" value = "true"/>
+
+    <node name = "jint" pkg = "interpolacja" type = "jint.py" output="screen"/>
+
+    <node name = "robot_state_publisher" pkg = "robot_state_publisher" type = "robot_state_publisher"/>
+
+    <node name = "rviz" pkg = "rviz" type = "rviz" args = "-f base" required = "true"/>
+
+</launch>
