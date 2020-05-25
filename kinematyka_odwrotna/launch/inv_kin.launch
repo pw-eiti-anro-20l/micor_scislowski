@@ -1,0 +1,14 @@
+<launch>
+
+    <param name = "robot_description" command = "xacro --inorder '$(find kinematyka_odwrotna)/urdf/movable.urdf'"/>
+    <param name = "use_gui" value = "true"/>
+
+    <node name = "oint" pkg = "kinematyka_odwrotna" type = "oint.py" output="screen"/>
+
+    <node name = "IKIN" pkg = "kinematyka_odwrotna" type = "inv_kin.py" output="screen"/>
+
+    <node name = "robot_state_publisher" pkg = "robot_state_publisher" type = "robot_state_publisher"/>
+
+    <node name = "rviz" pkg = "rviz" type = "rviz" args = "-f base" required = "true"/>
+
+</launch>
