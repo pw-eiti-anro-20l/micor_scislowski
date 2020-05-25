@@ -5,10 +5,11 @@ from interpolacja.srv import Oint
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import Header
 import math
+import time
 
 #wartosci poczatkowe
 frequency = 50
-current_translation = [0, 0, 0]
+current_translation = [3, 0, 1.5]
 current_rotation = [0, 0, 0, 1]
 
 #funkcja interpolujaca
@@ -74,6 +75,7 @@ def transformationPublisher():
         pose.pose.orientation.z = current_rotation[2]
         pose.pose.orientation.w = 1
         pub.publish(pose)
+        time.sleep(0.05)
 
 if __name__ == "__main__":
     try:
